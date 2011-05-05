@@ -8,7 +8,7 @@ Licensed under your license.
 	
 -------------------------------------------
 PLEASE DO NOT ALTER THIS NOTICE:
-ShrinkWrapper bootstrap code.
+ShrinkWrap bootstrap template code.
 Copyright (c) 2011 Sam Saint-Pettersen.
 	
 Released under the MIT License.
@@ -17,6 +17,7 @@ Released under the MIT License.
 
 #include <iostream>
 #include <string>
+#include <cstring>
 #include <cstdlib>
 using namespace std;
 
@@ -26,39 +27,30 @@ class ShrinkWrap {
 		// Instance variables
 		string appName;
 		string appVersion;
-		string appDependency;
-				
+		string appExecutable;
+		string appLauncher;
+		
 	public:
 		// Constructor
 		ShrinkWrap() {
 
 			// Set application information
-			appName = "Dummy application";
+			appName = "Hello World Swing application";
 			appVersion = "1.0";
-			appDependency = "ikvm";
+			appExecutable = "HelloWorldSwing.jar";
+			appLauncher = "ivkvm -jar";
 		}
 
-		// Properties
-		string Name() {
-			return appName;
-		}
-
-		string Version() {
-			return appVersion;
-		}
-
-		string Dependency() {
-			return appDependency;
-		}
-
+		// Execute method
 		void Execute(int argc, char* argv[]) {
-			system("notepad");
+		
+			string process = appLauncher + " " + appExecutable;
+			system(process.c_str());
 		}
 };
 
 // Main method; program entry point
 int main(int argc, char* argv[]) {
-
 
 	ShrinkWrap hostedApp = ShrinkWrap();
 	hostedApp.Execute(argc, argv);
