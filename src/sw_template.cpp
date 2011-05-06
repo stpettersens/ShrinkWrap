@@ -49,7 +49,13 @@ class ShrinkWrap {
 			string process;
 
 			// TODO: Implement argument passing...
+			for(int i = 1; i < argc; i++) {
+				args = argv[i];
+				strcat(args, " ");
+				std_args += args;
 				
+			}
+
 			process = appLauncher + " " + appExecutable + " " + std_args;
 			exitCode = InvokeApp(process, APP_ISGUI);
 			if(exitCode == BAD_EXIT_CODE) {
