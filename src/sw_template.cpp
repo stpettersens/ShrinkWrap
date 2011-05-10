@@ -18,26 +18,36 @@ within "sw_values.h".
 #include <cstdlib>
 #include "sw_xplatform.h"
 #include "sw_values.h"
+
+#ifdef _WIN32
+	#define _WIN32_WINNT 0x0500
+	#include <windows.h>
+#endif
 using namespace std;
 
 // ShrinkWrap class
 class ShrinkWrap {
 	private:
 		// Instance variables
-		string appName;
-		string appVersion;
-		string appExecutable;
-		string appLauncher;
+		bool appDebug, appIsGui;
+		string appName, appVersion, appExecutable, appLauncher;
+		ULONG badExitCode;
 		
 	public:
 		// Constructor
 		ShrinkWrap() {
 
-			// Set application information
+			// Set application settings using "sw_values.h" include.
+			appDebug = APP_DEBUG;
+			appIsGui = APP_IS_GUI;
 			appName = APP_NAME;
 			appVersion = APP_VERSION;
 			appExecutable = APP_EXECUTABLE;
 			appLauncher = APP_LAUNCHER;
+
+			// Set exit code according to plaform built for,
+			// using "sw_xplaform.h" include.
+			badExitCode = BAD_EXIT_CODE;
 		}
 
 		// Execute method
@@ -57,9 +67,9 @@ class ShrinkWrap {
 			}
 
 			process = appLauncher + " " + appExecutable + " " + std_args;
-			exitCode = InvokeApp(process, APP_ISGUI);
-			if(exitCode == BAD_EXIT_CODE) {
-				throw BAD_EXIT_CODE;
+			exitCode = InvokeApp(process, appIsGui);
+			if(exitCode == badExitCode) {
+				throw badExitCode;
 			}
 			if(APP_DEBUG) {
 				cout << appName << " " << appVersion;
@@ -72,13 +82,24 @@ class ShrinkWrap {
 // Main method; program entry point
 int main(int argc, char *argv[]) {
 
+	#ifdef _WIN32
+	HWND hWnd = GetConsoleWindow();
+	#endif
+	
+	if(APP_IS_GUI) {
+	#ifdef _WIN32	
+		ShowWindow(hWnd, SW_HIDE);
+	#endif
+	}
+
 	try {
 		ShrinkWrap hostedApp = ShrinkWrap();
 		hostedApp.Execute(argc, argv);
 	}
-	catch(int badExitCode)
+	catch(ULONG badExitCode)
 	{
-		cout << "\nAn error occurred in the application.\n";
+		cout << "\nAn error occurred in the application.";
+		cout << "\nExit code: " << badExitCode << "\n";
 	}
 
 	return 0;

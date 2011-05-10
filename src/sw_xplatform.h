@@ -1,7 +1,6 @@
 /*
 ShrinkWrap bootstrap template code.
 Copyright (c) 2011 Sam Saint-Pettersen.
-http://stpettersens.github.com/ShrinkWrap
 
 Cross-platform functionality header.
 */
@@ -12,28 +11,39 @@ using namespace std;
 
 #ifdef _WIN32
 #include <windows.h>
-#define BAD_EXIT_CODE 1
+#define BAD_EXIT_CODE 2
 #else
 #include <unistd.h>
 #define BAD_EXIT_CODE -1
 #endif
 
 // Prototypes
-int InvokeApp(string process, bool isGUI);
+ULONG InvokeApp(string process, bool isGui);
 
 
 // Invoke the application
-int InvokeApp(string process, bool isGUI) {
-	int exitCode = 0;
+ULONG InvokeApp(string process, bool isGui) {
+	ULONG exitCode = 0;
 
-//#ifdef _WIN32
+#ifdef _WIN32
 
-	//wchar_t *wprocess;
-	//memcpy(wprocess, process.c_str(), strlen(process.c_str()));
-	//LPWSTR wp = lstrcpyW(wp, process);
-	//CreateProcess(NULL, wp, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL);
-//#else
-	exitCode = system(process.c_str());
-//#endif
+	STARTUPINFO info={sizeof(info)};
+	PROCESS_INFORMATION processInfo;
+	ULONG rc;
+	char *p;
+	strcpy(p, process.c_str());
+
+	if(isGui) {
+
+	}
+
+	if(!CreateProcessA(NULL, p, NULL, NULL, false, 0,
+	NULL, NULL, &info, &processInfo)) {
+		return GetLastError();
+	}
+
+#else
+	exitCode = (ULONG)system(process.c_str());
+#endif
 	return exitCode;
 }
