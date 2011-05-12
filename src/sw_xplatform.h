@@ -14,16 +14,17 @@ using namespace std;
 #define BAD_EXIT_CODE 2
 #else
 #include <unistd.h>
+#define ULONG unsigned long
 #define BAD_EXIT_CODE -1
 #endif
 
 // Prototypes
-ULONG InvokeApp(string process, bool isGui);
+int InvokeApp(string process, bool isGui);
 
 
 // Invoke the application
-ULONG InvokeApp(string process, bool isGui) {
-	ULONG exitCode = 0;
+int InvokeApp(string process, bool isGui) {
+	int exitCode = 0;
 
 #ifdef _WIN32
 
@@ -39,11 +40,11 @@ ULONG InvokeApp(string process, bool isGui) {
 
 	if(!CreateProcessA(NULL, p, NULL, NULL, false, 0,
 	NULL, NULL, &info, &processInfo)) {
-		return GetLastError();
+		exitCode = (int) rc;
 	}
 
 #else
-	exitCode = (ULONG)system(process.c_str());
+	exitCode = system(process.c_str());
 #endif
 	return exitCode;
 }
