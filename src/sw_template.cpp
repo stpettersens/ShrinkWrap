@@ -22,8 +22,6 @@ within "sw_values.h".
 #ifdef _WIN32
 	#define _WIN32_WINNT 0x0500
 	#include <windows.h>
-#else
-	#define ULONG unsigned long
 #endif
 using namespace std;
 
