@@ -1,12 +1,12 @@
 /*
-Your application.
-Copyright (c) 2011 You the author.
+Hello World GUI example.
+Copyright (c) 2011 Sam Saint-Pettersen.
 
-Released under your chosen license.
+This code released into public domain.
 
------------------------------------
+--------------------------------------
 * ShrinkWrap values header. *
------------------------------------
+--------------------------------------
 */
 
 #define APP_DEBUG true	// Should the console (when shown) display verbose output?

@@ -9,9 +9,10 @@ TARGET=hwgui
 
 make:
 	@echo Building HelloWorld GUI...
-	@cp ../../$(SRC) .
-	@cp ../../$(INCLUDE) .
+	cp ../../$(SRC) .
+	cp ../../$(INCLUDE) .
 	g++ $(SRC) -o $(TARGET)
-	@rm -f $(SRC)
-	@rm -f $(INCLUDE)
+	strip $(TARGET)
+	rm -f $(SRC)
+	rm -f $(INCLUDE)
 	@echo Done.
