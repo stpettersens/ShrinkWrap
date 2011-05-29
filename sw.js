@@ -1,5 +1,5 @@
 /*
-	Script functions for Gaudi project website.
+	Script functions for ShrinkWrap project website.
 	Copyright (c) 2011 Sam Saint-Pettersen.
 	
 	This script works in conjunction with:

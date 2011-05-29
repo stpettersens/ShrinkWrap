@@ -1,5 +1,5 @@
 /*
-	Stylesheet for Gaudi project website.
+	Stylesheet for ShrinkWrap project website.
 	Let's go crazy experimenting with ems.
 	
 	Copyright (c) 2011 Sam Saint-Pettersen.
@@ -75,7 +75,7 @@ div#description
 	margin: auto;
 	padding: 1em;
 	text-align: left;
-	background-color: #E3EAF2;
+	background-color: #F0F0F0;
 	width: 40em; 
 	/* In Apple WebKit / KHTML? based browsers (Chrome, Safari), width here has to be 42em */
 }
@@ -94,7 +94,7 @@ div#features, #compatibility
 	margin-right: auto;
 	text-align: left;
 	padding: 1em;
-	background-color: #F0F0F0; 
+	background-color: #DBEADC; 
 	width: 40.1em;
 }	
 div#footer
