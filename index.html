@@ -1,77 +1,111 @@
-<!DOCTYPE html>
-<html>
-<head>
-  <meta charset='utf-8'>
-
-  <title>stpettersens/ShrinkWrap @ GitHub</title>
-
-  <style type="text/css">
-    body {
-      margin-top: 1.0em;
-      background-color: #26e025;
-      font-family: Helvetica, Arial, FreeSans, san-serif;
-      color: #ffffff;
-    }
-    #container {
-      margin: 0 auto;
-      width: 700px;
-    }
-    h1 { font-size: 3.8em; color: #d91fda; margin-bottom: 3px; }
-    h1 .small { font-size: 0.4em; }
-    h1 a { text-decoration: none }
-    h2 { font-size: 1.5em; color: #d91fda; }
-    h3 { text-align: center; color: #d91fda; }
-    a { color: #d91fda; }
-    .description { font-size: 1.2em; margin-bottom: 30px; margin-top: 30px; font-style: italic;}
-    .download { float: right; }
-    pre { background: #000; color: #fff; padding: 15px;}
-    hr { border: 0; width: 80%; border-bottom: 1px solid #aaa}
-    .footer { text-align:center; padding-top:30px; font-style: italic; }
-  </style>
-</head>
-
-<body>
-  <a href="http://github.com/stpettersens/ShrinkWrap"><img style="position: absolute; top: 0; right: 0; border: 0;" src="http://s3.amazonaws.com/github/ribbons/forkme_right_darkblue_121621.png" alt="Fork me on GitHub" /></a>
-
-  <div id="container">
-
-    <div class="download">
-      <a href="http://github.com/stpettersens/ShrinkWrap/zipball/master">
-        <img border="0" width="90" src="http://github.com/images/modules/download/zip.png"></a>
-      <a href="http://github.com/stpettersens/ShrinkWrap/tarball/master">
-        <img border="0" width="90" src="http://github.com/images/modules/download/tar.png"></a>
-    </div>
-
-    <h1><a href="http://github.com/stpettersens/ShrinkWrap">ShrinkWrap</a>
-      <span class="small">by <a href="http://github.com/stpettersens">stpettersens</a></span></h1>
-
-    <div class="description">
-      A cross-platform native wrapper application for easy deployment of applications dependent on other processes.
-    </div>
-
-    <h2>Authors</h2>
-<p>Sam Saint-Pettersen (s.stpettersen@gmail.com)<br/><br/>      </p>
-<h2>Contact</h2>
-<p>Sam Saint-Pettersen (s.stpettersen@gmail.com)<br/>      </p>
-
-
-    <h2>Download</h2>
-    <p>
-      You can download this project in either
-      <a href="http://github.com/stpettersens/ShrinkWrap/zipball/master">zip</a> or
-      <a href="http://github.com/stpettersens/ShrinkWrap/tarball/master">tar</a> formats.
-    </p>
-    <p>You can also clone the project with <a href="http://git-scm.com">Git</a>
-      by running:
-      <pre>$ git clone git://github.com/stpettersens/ShrinkWrap</pre>
-    </p>
-
-    <div class="footer">
-      get the source code on GitHub : <a href="http://github.com/stpettersens/ShrinkWrap">stpettersens/ShrinkWrap</a>
-    </div>
-
-  </div>
-
-  
-</body>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" 
+"http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+	<!-- 
+	ShrinkWrap project website X/HTML
+	Copyright (c) 2011 Sam Saint-Pettersen. -->
+  <head>
+  <title>ShrinkWrap wrapper SDK</title>
+    <script type="text/javascript" src="jquery-1.6.min.js"></script>
+	<!--<script type="text/javascript" src="http://www.java.com/js/deployJava.js"></script>-->
+	<script type="text/javascript" src="sw.js"></script>
+ 	<link type="text/css" rel="stylesheet" href="sw.css"/>
+	<link type="application/atom+xml" rel="alternate" href="https://github.com/stpettersens/ShrinkWrap/commits/master.atom"/>
+  	<meta http-equiv="content-type" content="application/xhtml+xml; charset=ISO-8859-1"/>
+  	</head>
+  	<body onload="onLoad();">
+  	<div>
+	<a href="http://github.com/stpettersens/ShrinkWrap">
+	<img id="forkMe" src="http://s3.amazonaws.com/github/ribbons/forkme_right_darkblue_121621.png" alt="Fork me 
+	on GitHub" /></a>
+	</div>
+       <div id="navigation">
+       <h2>ShrinkWrap SDK</h2>
+       <br/>
+	   <a class="navi" href="index.html">Home</a>
+	   <a class="navi" href="#dl">Download</a>
+	   <a class="navi" href="#">Wiki</a>
+	   <a class="navi" href="https://github.com/stpettersens/ShrinkWrap/commits/master.atom">Commits</a>
+	   <img id="commitFeed" title="Atom feed." alt="Atom feed." src="images/feed_28.png"/>
+       </div>  
+    <div id="description">
+ 	<img id="photo" alt="Photo &copy; 2010 Michael Himbeault. CC." 
+       	src="images/photo_logo.jpg"/>
+    	<h3>What is ShrinkWrap?</h3>
+      	<p>
+		<strong>ShrinkWrap is a collection of C++ code to provide
+   a system native executable wrapping around your Java or other VM-based
+   application or similar.</strong>
+      	</p>
+      	<p>
+      ShrinkWrap is provided as a thin SDK, offering data encoding of the host application resources, to use with your C++ compiler of choice.
+      	</p>
+		You can clone ShrinkWrap from its <a class="extern" href="http://git-scm.com">Git</a> repo, using:
+    <pre id="repo">git clone git://github.com/stpettersens/ShrinkWrap</pre>
+    	<!-- ClipboardApplet is embedded here -->
+		<script type="text/javascript">
+		<!--
+			// Regular expression for unsupported user agents.
+      // As it stands, there are problems with the applet loading on Macs.
+			var unsupported = /Version\/\d.\d.\d\sSafari|PlayStation|iPhone|Mac/;
+			
+			// Run applet when Java is enabled and user agent is supported.
+  			if(navigator.javaEnabled() && navigator.userAgent.search(unsupported) == -1)
+            {
+				var attributes = { id: 'cbApplet', code: 'ClipboardApplet',
+					archive: 'ClipboardApplet.jar',
+    				width: 200, height: 20 }; 
+  				var parameters = { mayscript: 'true', tocopy: 'repo', 
+  					jnlp_href: 'ClipboardApplet.jnlp' } ; 
+  				deployJava.runApplet(attributes, parameters, '1.6'); 
+            }  	
+		-->
+		</script>
+	</div>
+	<div id="features">
+	 <a name="dl"></a>
+	 <!-- Thanks to Mihai Ungureanu for assistance in design of buttons below -->  
+	 <table id="dl_subsection">
+	 <tr><td><a href="#">
+	 	<img id="download_button" alt="Download ShrinkWrap executable." src="images/download_src_button.png"/></a></td>
+	 <td><a href="#">
+		<img id="download_src_button" alt="Download ShrinkWrap source code." src="images/download_src_button.png"/></a></td></tr>
+	<tr><td class="caption">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+ShrinkWrap C++ SDK (ZIP)<br/></td>
+	<td class="caption">Latest Git commit. (ZIP)</td></tr></table>
+     	<!--<h3>Features</h3>
+     	<strong>ShrinkWrap offers...</strong>
+     	<ul>
+        <li>blah</li>
+     	</ul>-->
+     </div>
+     <div id="compatibility">
+     	<h3>Compatibility</h3>
+     	<p>
+     	ShrinkWrap overall should be <em>mostly</em> compatible with the following C++ compilers and  as been tested with and is known to work with the following:
+     	</p>
+     	<ul>
+     		<li><a class="extern" href="http://gcc.gnu.org">GNU G++</a></li> 
+		 </ul>
+     </div> 
+     <div id="footer">
+     <noscript>
+     	<p><strong>JavaScript is either unsupported or has been disabled in the browser.<br/>
+     	 For the best user experience, please enable JavaScript if possible. [
+      <a href="http://help.yahoo.com/l/us/yahoo/help/faq/browsers/browsers-63474.html">How do I fix this?</a>]</strong></p>
+	   </noscript>
+      <p>Copyright &copy; 2010-2011 <a class="flink" href="http://github.com/stpettersens">Sam Saint-Pettersen</a>.
+      All rights reserved.<br/>Photograph of code, courtesy of 	
+      <a class="flink" href="http://www.flickr.com/photos/riebart/4466482623/">Michael Himbeault</a>.</p>
+      <p>
+      The <a class="flink" href="http://github.com/stpettersens/ShrinkWrap">ShrinkWrap project</a> is hosted courtesy of 
+      <a class="flink" href="http://github.com">Github</a>.
+      </p>
+      <p>
+      	This website validates as compliant
+      	<a class="flink" href="http://validator.w3.org/check?uri=referer">XHTML</a> &amp;
+      	<a class="flink" href="http://jigsaw.w3.org/css-validator/check/referer">CSS</a>.
+      </p>
+     </div>
+  </body>
 </html>

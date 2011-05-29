@@ -1,0 +1,125 @@
+/*
+	Stylesheet for Gaudi project website.
+	Let's go crazy experimenting with ems.
+	
+	Copyright (c) 2011 Sam Saint-Pettersen.
+*/
+body 
+{
+	font-family: Verdana, Helvetica, sans-serif;
+	font-size: 10pt;
+}
+h2
+{
+	font-size: 1.5em;
+}
+a 
+{
+	text-decoration: underline;
+	color: #080808;
+}
+a.navi
+{
+	font-size: 12pt;
+	padding: 2em;
+}
+a.flink
+{
+	color: #505050;
+}
+a:hover 
+{
+	text-decoration: none;
+}
+img 
+{
+	border: 0em;
+}
+img#commitFeed
+{
+	padding-top: 4em;
+	margin-top: -10em;
+	margin-left: -2em;
+	border: 0em;
+}
+img#photo
+{
+	float: left;
+	padding: 1.5em;
+}
+img#download_button
+{
+	margin-left: 3em;
+}
+img#forkMe 
+{
+	position: absolute; 
+	top: 0em; 
+	right: 0em; 
+	border: 0em;
+}
+td.caption
+{
+	font-size: 8pt;
+	color: #606060;
+	padding-left: 0.8em;
+}
+div#navigation
+{
+	text-align: center;
+	padding: 1.5em;
+}
+div#description
+{
+	display: table;
+	margin: auto;
+	padding: 1em;
+	text-align: left;
+	background-color: #E3EAF2;
+	width: 40em; 
+	/* In Apple WebKit / KHTML? based browsers (Chrome, Safari), width here has to be 42em */
+}
+li
+{
+	padding: 0.5em;
+}
+li.alt
+{
+	list-style-type: circle;
+}
+div#features, #compatibility
+{
+	margin-top: 0.8em;
+	margin-left: auto;
+	margin-right: auto;
+	text-align: left;
+	padding: 1em;
+	background-color: #F0F0F0; 
+	width: 40.1em;
+}	
+div#footer
+{
+	display: table;
+	margin-top: 2em;
+	margin-left: auto;
+	margin-right: auto;
+	font-size: 8pt;
+	color: #505050;
+}
+pre#repo
+{
+	width: 30em;
+	padding: 0.5em;
+	background-color: #000000;
+	color: #FFFFFF;
+}
+acronym
+{
+	text-decoration: none;
+	border-bottom: 1px dotted #000000;
+}
+
+.largeText
+{
+	font-size: 12pt;
+}
