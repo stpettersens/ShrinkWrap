@@ -87,7 +87,7 @@ li.alt
 {
 	list-style-type: circle;
 }
-div#features, #compatibility
+div#features, #compatibility, #license
 {
 	margin-top: 0.8em;
 	margin-left: auto;
